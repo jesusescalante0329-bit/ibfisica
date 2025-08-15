@@ -18,7 +18,7 @@ body.sidebar-hidden .content {
     width: 250px;
     background-color: #fff;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     height: 100%;
     overflow-y: auto;
@@ -43,11 +43,24 @@ body.sidebar-hidden .content {
     text-decoration: none;
     border-bottom: 1px solid #eee;
     position: relative;
+    padding-left: 25px; /* Espacio para el icono */
+}
+
+.sidebar ul li a::before {
+    content: '▶'; /* Icono de la flecha */
+    position: absolute;
+    left: 8px;
+    transition: transform 0.3s ease;
+    font-size: 10px;
+}
+
+.sidebar ul li.active > a::before {
+    transform: rotate(90deg);
 }
 
 .submenu {
     display: none;
-    padding-left: 20px;
+    padding-left: 15px; /* Reducido para la jerarquía */
     background-color: #f9f9f9;
 }
 
@@ -55,8 +68,8 @@ body.sidebar-hidden .content {
     padding: 8px 10px;
 }
 
-.sidebar ul li.active .submenu {
-    display: block;
+.submenu .sub-submenu a::before {
+    left: 20px;
 }
 
 .content {
@@ -66,7 +79,8 @@ body.sidebar-hidden .content {
     transition: margin-left 0.3s ease;
 }
 
-.content h1, .content h2 {
+.content h1,
+.content h2 {
     color: #005a9c;
 }
 
@@ -75,7 +89,7 @@ section {
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .toggle-btn {
