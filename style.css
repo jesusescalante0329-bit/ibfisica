@@ -43,19 +43,19 @@ body.sidebar-hidden .content {
     text-decoration: none;
     border-bottom: 1px solid #eee;
     position: relative;
-    padding-left: 25px; /* Espacio para el icono */
+    padding-left: 25px;
 }
 
-.sidebar ul li a.topic::before,
-.sidebar ul li a.theme::before {
-    content: '▶'; /* Icono de la flecha */
+/* Estilo para los iconos de la flecha */
+.sidebar ul li a.parent::before {
+    content: '▶';
     position: absolute;
     left: 8px;
     transition: transform 0.3s ease;
     font-size: 10px;
 }
 
-.sidebar ul li.active > a::before {
+.sidebar ul li.active > a.parent::before {
     transform: rotate(90deg);
 }
 
