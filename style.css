@@ -46,7 +46,8 @@ body.sidebar-hidden .content {
     padding-left: 25px; /* Espacio para el icono */
 }
 
-.sidebar ul li a::before {
+.sidebar ul li a.topic::before,
+.sidebar ul li a.theme::before {
     content: '▶'; /* Icono de la flecha */
     position: absolute;
     left: 8px;
@@ -60,7 +61,7 @@ body.sidebar-hidden .content {
 
 .submenu {
     display: none;
-    padding-left: 15px; /* Reducido para la jerarquía */
+    padding-left: 15px;
     background-color: #f9f9f9;
 }
 
