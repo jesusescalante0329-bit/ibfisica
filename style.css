@@ -36,27 +36,37 @@ body.sidebar-hidden .content {
     padding: 0;
 }
 
+.sidebar ul li {
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
 .sidebar ul li a {
     display: block;
     padding: 10px;
     color: #333;
     text-decoration: none;
-    border-bottom: 1px solid #eee;
-    position: relative;
-    padding-left: 25px;
+    padding-left: 35px; /* Ajuste para el nuevo ícono de despliegue */
 }
 
-/* Estilo para los iconos de la flecha */
-.sidebar ul li a.parent::before {
+.sidebar ul li a:hover {
+    background-color: #e9e9e9;
+}
+
+/* El ícono de despliegue */
+.sidebar ul li a.toggle::before {
     content: '▶';
     position: absolute;
-    left: 8px;
-    transition: transform 0.3s ease;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 10px;
+    transition: transform 0.3s ease;
 }
 
-.sidebar ul li.active > a.parent::before {
-    transform: rotate(90deg);
+/* Gira la flecha cuando el menú está abierto */
+.sidebar ul li.active > a.toggle::before {
+    transform: translateY(-50%) rotate(90deg);
 }
 
 .submenu {
@@ -69,8 +79,9 @@ body.sidebar-hidden .content {
     padding: 8px 10px;
 }
 
-.submenu .sub-submenu a::before {
-    left: 20px;
+/* Muestra los submenús cuando el padre tiene la clase 'active' */
+.sidebar ul li.active > .submenu {
+    display: block;
 }
 
 .content {
