@@ -46,7 +46,7 @@ body.sidebar-hidden .content {
     padding: 10px;
     color: #333;
     text-decoration: none;
-    padding-left: 35px; /* Ajuste para el nuevo ícono de despliegue */
+    padding-left: 35px;
 }
 
 .sidebar ul li a:hover {
