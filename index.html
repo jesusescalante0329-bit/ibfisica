@@ -114,8 +114,9 @@
         }
 
         function toggleSubmenu(element) {
-            const parent = element.parentElement;
-            
+            // Encuentra el elemento <li> padre más cercano
+            const parent = element.closest('li');
+
             // Cierra otros submenús en el mismo nivel
             const siblings = parent.parentElement.children;
             for (let i = 0; i < siblings.length; i++) {
