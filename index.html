@@ -8,11 +8,13 @@
 </head>
 <body>
 
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
     <nav class="sidebar">
         <h2>Física IB</h2>
         <ul>
-            <li>
-                <a href="#">A. Espacio, tiempo y movimiento</a>
+            <li class="chapter">
+                <a href="javascript:void(0)" onclick="toggleSubmenu(this)">A. Espacio, tiempo y movimiento</a>
                 <ul class="submenu">
                     <li><a href="capitulos/capitulo-a.html#A.1-cinematica">A.1 Cinemática</a></li>
                     <li><a href="capitulos/capitulo-a.html#A.2-fuerzas">A.2 Fuerzas y cantidad de movimiento</a></li>
@@ -21,13 +23,46 @@
                     <li><a href="capitulos/capitulo-a.html#A.5-relatividad">A.5 Relatividad galileana y especial</a></li>
                 </ul>
             </li>
-            <li>
-                <a href="#">B. La naturaleza corpuscular de la materia</a>
+            <li class="chapter">
+                <a href="javascript:void(0)" onclick="toggleSubmenu(this)">B. La naturaleza corpuscular de la materia</a>
                 <ul class="submenu">
-                    <li><a href="#">B.1 Transferencias de energía térmica</a></li>
-                    </ul>
+                    <li><a href="capitulos/capitulo-b.html#B.1-termica">B.1 Transferencias de energía térmica</a></li>
+                    <li><a href="capitulos/capitulo-b.html#B.2-invernadero">B.2 Efecto invernadero</a></li>
+                    <li><a href="capitulos/capitulo-b.html#B.3-gases">B.3 Leyes de los gases</a></li>
+                    <li><a href="capitulos/capitulo-b.html#B.4-termodinamica">B.4 Termodinámica</a></li>
+                    <li><a href="capitulos/capitulo-b.html#B.5-circuitos">B.5 Corriente y circuitos</a></li>
+                </ul>
             </li>
-            </ul>
+            <li class="chapter">
+                <a href="javascript:void(0)" onclick="toggleSubmenu(this)">C. Comportamiento de las ondas</a>
+                <ul class="submenu">
+                    <li><a href="capitulos/capitulo-c.html#C.1-mas">C.1 Movimiento armónico simple</a></li>
+                    <li><a href="capitulos/capitulo-c.html#C.2-ondulatorio">C.2 Modelo ondulatorio</a></li>
+                    <li><a href="capitulos/capitulo-c.html#C.3-fenomenos">C.3 Fenómenos ondulatorios</a></li>
+                    <li><a href="capitulos/capitulo-c.html#C.4-estacionarias">C.4 Ondas estacionarias y resonancia</a></li>
+                    <li><a href="capitulos/capitulo-c.html#C.5-doppler">C.5 Efecto Doppler</a></li>
+                </ul>
+            </li>
+            <li class="chapter">
+                <a href="javascript:void(0)" onclick="toggleSubmenu(this)">D. Campos</a>
+                <ul class="submenu">
+                    <li><a href="capitulos/capitulo-d.html#D.1-gravitatorio">D.1 El campo gravitatorio</a></li>
+                    <li><a href="capitulos/capitulo-d.html#D.2-electrico">D.2 Campos eléctricos y magnéticos</a></li>
+                    <li><a href="capitulos/capitulo-d.html#D.3-movimiento">D.3 Movimiento en campos electromagnéticos</a></li>
+                    <li><a href="capitulos/capitulo-d.html#D.4-induccion">D.4 Inducción</a></li>
+                </ul>
+            </li>
+            <li class="chapter">
+                <a href="javascript:void(0)" onclick="toggleSubmenu(this)">E. Física nuclear y cuántica</a>
+                <ul class="submenu">
+                    <li><a href="capitulos/capitulo-e.html#E.1-atomo">E.1 Estructura del átomo</a></li>
+                    <li><a href="capitulos/capitulo-e.html#E.2-cuantica">E.2 Física cuántica</a></li>
+                    <li><a href="capitulos/capitulo-e.html#E.3-radiactiva">E.3 Desintegración radiactiva</a></li>
+                    <li><a href="capitulos/capitulo-e.html#E.4-fision">E.4 Fisión</a></li>
+                    <li><a href="capitulos/capitulo-e.html#E.5-fusion">E.5 Fusión y estrellas</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
 
     <main class="content">
@@ -35,5 +70,26 @@
         <p>Utiliza la barra de navegación de la izquierda para explorar los diferentes capítulos y temas del curso.</p>
     </main>
 
+    <script>
+        function toggleSidebar() {
+            document.body.classList.toggle('sidebar-hidden');
+        }
+
+        function toggleSubmenu(element) {
+            const submenu = element.nextElementSibling;
+            const parent = element.parentElement;
+            
+            // Cierra otros submenús si están abiertos
+            const allChapters = document.querySelectorAll('.chapter');
+            allChapters.forEach(chapter => {
+                if (chapter !== parent) {
+                    chapter.classList.remove('active');
+                }
+            });
+
+            // Abre o cierra el submenú actual
+            parent.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
