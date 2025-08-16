@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física IB - Distancia y Desplazamiento</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .page-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .page-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .page-video {
+            flex: 1;
+            min-width: 300px;
+        }
+        .page-video iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+        }
+        .full-width-section {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .full-width-section iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .download-button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .download-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #005a9c;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .download-button:hover {
+            background-color: #00407a;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <nav class="sidebar">
+        <h2>Física IB</h2>
+        <ul>
+            <li class="chapter active">
+                <a href="javascript:void(0)" class="toggle" onclick="toggleSubmenu(this)">A. Espacio, tiempo y movimiento</a>
+                <ul class="submenu" style="display: block;">
+                    <li class="topic">
+                        <a href="javascript:void(0)" class="toggle" onclick="toggleSubmenu(this)">A.1 Cinemática •</a>
+                        <ul class="submenu" style="display: block;">
+                            <li><a href="capitulos/capitulo-a.html#A.1.1">Distancia y desplazamiento</a></li>
+                            <li><a href="capitulos/capitulo-a.html#A.1.2">Rapidez y velocidad</a></li>
+                            </ul>
+                    </li>
+                    </ul>
+            </li>
+            </ul>
+    </nav>
+    
+    <main class="content">
+        <h1 id="A.1.1">Distancia y Desplazamiento</h1>
+
+        <div class="page-content">
+            <div class="page-text">
+                <h2>Conceptos Fundamentales</h2>
+                <p>La distancia y el desplazamiento son conceptos fundamentales en cinemática que a menudo se confunden. La **distancia** es una cantidad escalar que se refiere a "cuánto terreno ha cubierto un objeto durante su movimiento", mientras que el **desplazamiento** es una cantidad vectorial que se refiere a "qué tan lejos está un objeto de su punto de partida", independientemente del camino que haya tomado.</p>
+                <p>Imagina que caminas 5 metros al este y luego 5 metros al oeste para volver a tu punto de partida. La distancia que has recorrido es de 10 metros, pero tu desplazamiento es de cero metros, ya que terminaste en el mismo lugar donde comenzaste.</p>
+            </div>
+            <div class="page-video">
+                <iframe src="https://www.youtube.com/embed/WJ5-f_Nf-3g?si=hC77U8aP01jQ8V4t" title="Concepto de Distancia y Desplazamiento" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="full-width-section">
+            <h2>Presentación del Tema</h2>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ3Y2r99S9cR_z1_3Zg1Wj5G8y8z7ZtT7K2l5h7b4E0dM/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+
+        <div class="full-width-section">
+            <h2>Ejercicios Resueltos</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?si=Jd8iM7N5m-3h-n7z&list=PLt-qN4hJ8DkF9wG6nS8U2L9Z_2g5k8R6G" title="Ejercicios de Distancia y Desplazamiento" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="download-button-container">
+            <a href="https://ejemplo.com/enlace-a-tu-archivo.pdf" class="download-button" download>Descargar Ejercicios</a>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script>
+        // Esta función no es necesaria si el script.js ya está enlazado
+        // Pero se incluye por si se quiere añadir funcionalidad específica de la página
+    </script>
+</body>
+</html>
