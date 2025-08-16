@@ -180,10 +180,25 @@
         </div>
     </main>
 
-    <script src="../script.js"></script>
     <script>
-        // Esta función no es necesaria si el script.js ya está enlazado
-        // Pero se incluye por si se quiere añadir funcionalidad específica de la página
+        function toggleSidebar() {
+            document.body.classList.toggle('sidebar-hidden');
+        }
+
+        function toggleSubmenu(element) {
+            const parent = element.closest('li');
+            
+            // Cierra otros submenús en el mismo nivel
+            const siblings = parent.parentElement.querySelectorAll('li');
+            siblings.forEach(sibling => {
+                if (sibling !== parent) {
+                    sibling.classList.remove('active');
+                }
+            });
+            
+            // Abre o cierra el submenú actual
+            parent.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
