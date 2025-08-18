@@ -5,14 +5,14 @@ function toggleSidebar() {
 function toggleSubmenu(element) {
     const parent = element.closest('li');
     
-    // Cierra otros submenús en el mismo nivel
-    const siblings = parent.parentElement.querySelectorAll('li');
-    siblings.forEach(sibling => {
-        if (sibling !== parent) {
+    // Cierra otros submenús en el mismo nivel si se abre uno nuevo.
+    if (!parent.classList.contains('active')) {
+        const siblings = parent.parentElement.querySelectorAll('li');
+        siblings.forEach(sibling => {
             sibling.classList.remove('active');
-        }
-    });
+        });
+    }
     
-    // Abre o cierra el submenú actual
+    // Abre o cierra el submenú actual.
     parent.classList.toggle('active');
 }
