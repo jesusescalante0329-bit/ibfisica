@@ -151,9 +151,11 @@ section {
     box-sizing: border-box;
 }
 
+/* Regla para que el iframe se ajuste al tamaño del contenedor padre */
 .media-item iframe {
     width: 100%;
-    height: 315px;
+    /* Duplicamos el alto del video principal y lo ajustamos a 630px */
+    height: 630px; 
 }
 
 /* Estilos para los botones */
@@ -178,4 +180,10 @@ section {
 .download-btn:hover,
 .view-btn:hover {
     background-color: #0056b3;
+}
+
+@media (max-width: 900px) {
+    .media-item iframe {
+        height: auto;
+    }
 }
